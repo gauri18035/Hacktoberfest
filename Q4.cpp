@@ -15,7 +15,9 @@ ll qpow(ll a, ll b){
     return res;
 }
  
-
+ll inv(ll x){
+    return qpow(x, MOD-2);
+}
  
  
  
@@ -38,4 +40,4 @@ int main() {
         if(ans) cout<<"yes\n";
         else cout<<"no\n";
     }
-} 
+}
