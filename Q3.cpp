@@ -163,7 +163,24 @@ void computeTotient(int n)
     phi[1]=0;
 }
 vector<vector<int> >v;
-
+void solve()
+{
+    int n;
+    cin>>n;
+    int ans=0;
+    for(int i=n-1;i>=2;i--)
+    {
+        for(auto it:v[i])
+        {
+            int g=gcd(n-i,it);
+            int ct=phi[i/it];
+            int lcm=((n-i)*it)/g;
+            ans+=(lcm*ct);
+            ans%=mod;
+        }
+    }
+    cout<<ans<<endl;
+}
 signed main()
 {
     fast
