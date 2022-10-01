@@ -18,7 +18,10 @@ ll qpow(ll x,ll y)
 	}
 	return s;
 }
-
+ll C(ll n,ll m)
+{
+	return fac[n]*qpow(fac[m]*fac[n-m]%mod,mod-2);
+}
 void solve()
 {
 	cin>>n>>k;
